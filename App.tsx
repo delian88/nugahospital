@@ -261,33 +261,36 @@ const AboutPage = () => (
 
 const DoctorsPage = () => {
   const doctors = [
-    { name: 'Dr. Olasubomi Ade-Ojo', specialty: 'Chief Cardiologist', image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1000&auto=format&fit=crop' },
-    { name: 'Dr. Chioma Okeke', specialty: 'Pediatric Specialist', image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1000&auto=format&fit=crop' },
-    { name: 'Dr. Ibrahim Musa', specialty: 'Neurosurgeon', image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1000&auto=format&fit=crop' },
-    { name: 'Dr. Sarah Johnson', specialty: 'Orthopedic Surgeon', image: 'https://images.unsplash.com/photo-1559839734-2b71f1536783?q=80&w=1000&auto=format&fit=crop' },
+    { specialty: 'Chief Cardiologist' },
+    { specialty: 'Pediatric Specialist' },
+    { specialty: 'Neurosurgeon' },
+    { specialty: 'Orthopedic Surgeon' },
+    { specialty: 'Diagnostic Lead' },
+    { specialty: 'Chief Pharmacist' },
   ];
 
   return (
     <div className="bg-white">
       <PageHeader 
-        title="Global Talent" 
-        subtitle="Board-certified medical specialists bringing international expertise and innovative care to Abuja." 
+        title="Our Specialists" 
+        subtitle="Board-certified medical experts bringing international expertise and innovative care to Abuja." 
       />
       <section className="py-32">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
             {doctors.map((doc, idx) => (
               <div key={idx} className="group text-center">
-                <div className="relative mb-10 overflow-hidden rounded-[4rem] shadow-2xl">
-                   <ImageWithFallback 
-                     src={doc.image} 
-                     alt={doc.name} 
-                     className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110" 
-                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative mb-10 overflow-hidden rounded-[4rem] shadow-2xl bg-slate-50 border border-slate-100 p-12 aspect-square flex items-center justify-center group-hover:bg-primary/5 transition-all duration-500">
+                   <div className="w-40 h-40 bg-white rounded-full shadow-inner flex items-center justify-center text-primary/40 group-hover:text-primary transition-colors">
+                     <svg className="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                     </svg>
+                   </div>
+                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <h4 className="text-2xl font-black text-slate-900 font-modern shimmer-text group-hover:scale-105 transition-transform mb-2">{doc.name}</h4>
-                <p className="text-slate-400 font-black text-xs uppercase tracking-[0.3em] font-modern">{doc.specialty}</p>
+                <div className="text-slate-400 font-black text-sm uppercase tracking-[0.3em] font-modern shimmer-text group-hover:scale-105 transition-transform">
+                  {doc.specialty}
+                </div>
               </div>
             ))}
           </div>
