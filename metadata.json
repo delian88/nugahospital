@@ -1,0 +1,8 @@
+{
+  "name": "NugaHospital - Modern Healthcare Excellence",
+  "description": "A professional, high-performance healthcare platform for NugaHospital, featuring AI-driven patient assistance, real-time appointments, and modern UI/UX design.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
