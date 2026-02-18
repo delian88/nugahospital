@@ -31,28 +31,28 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate }) => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled || currentView !== 'home' ? 'bg-white/95 backdrop-blur-xl shadow-lg py-4' : 'bg-transparent py-8'
     }`}>
-      <div className="container mx-auto px-6 flex justify-between items-center md:gap-16">
+      <div className="container mx-auto px-6 flex justify-between items-center md:gap-4 lg:gap-10">
         <div 
-          className="flex items-center space-x-4 cursor-pointer group flex-shrink-0"
+          className="flex items-center space-x-3 cursor-pointer group flex-shrink-0"
           onClick={() => onNavigate('home')}
         >
           <div className="relative">
-            <BrandIcon size={48} className="group-hover:scale-110 transition-transform duration-300" />
+            <BrandIcon size={40} className="group-hover:scale-110 transition-transform duration-300" />
             <div className="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </div>
-          <span className={`text-3xl font-black tracking-tighter font-modern transition-colors flex items-baseline ${
+          <span className={`text-2xl lg:text-3xl font-black tracking-tighter font-modern transition-colors flex items-baseline ${
             isScrolled || currentView !== 'home' ? 'text-slate-900' : 'text-white'
           }`}>
             Nuga<span className="shimmer-text">Hospital</span>
           </span>
         </div>
         
-        <div className="hidden md:flex items-center space-x-12 lg:space-x-16">
+        <div className="hidden md:flex items-center space-x-6 lg:space-x-10">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => onNavigate(link.id)}
-              className={`font-black text-sm uppercase tracking-widest font-modern transition-all relative group whitespace-nowrap ${
+              className={`font-black text-xs lg:text-sm uppercase tracking-widest font-modern transition-all relative group whitespace-nowrap ${
                 currentView === link.id 
                   ? 'text-primary' 
                   : (isScrolled || currentView !== 'home' ? 'text-slate-600 hover:text-primary' : 'text-white/80 hover:text-white')
@@ -64,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate }) => {
           ))}
           <button 
             onClick={() => onNavigate('contact')}
-            className="bg-primary text-white px-8 py-3 rounded-2xl font-black text-sm uppercase tracking-widest font-modern hover:bg-primary-dark transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-primary/30 whitespace-nowrap"
+            className="bg-primary text-white px-6 lg:px-8 py-3 rounded-2xl font-black text-xs lg:text-sm uppercase tracking-widest font-modern hover:bg-primary-dark transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-primary/30 whitespace-nowrap"
           >
             Book Appointment
           </button>
